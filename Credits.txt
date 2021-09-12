@@ -1,0 +1,4 @@
+Licensa: Open-Source
+Creditos do  Código: MatheusTGamerPro
+NÃO remova as HashTags do codigo! se puder adicione este arquivo para sua inicial do seu modificamento do codigo
+Mais informações do codigo no README.md
