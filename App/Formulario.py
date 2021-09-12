@@ -1,26 +1,51 @@
 from tkinter import *
 import os
 
-esc= os.path.dirname("__file__")
-nomearq = esc+"Formulario.txt"
-def dados():
-	arquivo=open(nomearq, "a")
-	arquivo.write("Nome: %s"%nm1.get())
-	arquivo.write("Senha: %s"%sn1.get())
-	arquivo.close()
-def sair():
-	exit()
-	
+esc=os.path.dirname("__file__")
+nomearq= esc+"Formulario.txt"
+
+def CreateArchiver():
+    arquivo=open(nomearq,"a")
+    arquivo.write("="*30)
+    arquivo.write("\n Por: %s "%por.get())
+    arquivo.write("\n Para:  %s "%para.get())
+    arquivo.write(" \n Assunto:  %s"%resumo.get())
+    arquivo.write("\n \n Texto: \n %s"%texto.get("1.0",END))
+    arquivo.write("="*30)
+    arquivo.close()
+    print("Formulario Feito com sucesso, verifique sua pasta do arquivo!" ) 
+
+def close():
+    close2=Tk()
+    close2.title("Sair")
+    close2.geometry("290x120")
+    close2.configure(background="red")
+    
+    Label(close2, text="Voce Realmentemente deseja fechar o formulario?",background="red",foreground="white").place(x="10",y="10")
+    fechar=Button(close2, text="Sim",command=finalizar).place(x="40",y="45",width="70",height="30")
+    retornar=Button(close2, text="Nao",command=close2.destroy).place(x="160",y="45",width="70",height="30")
+    close2.mainloop()
+def  finalizar ():
+    exit()
+
 app = Tk()
-app.title('Pratica')
-app.geometry('500x500')
-app.configure(background='#dde')
-Label(app,text='Nome:',background="#fff",foreground='#009',anchor=W).place(x='10',y='10',width='100',height='30')
-nm1 = Entry(app)
-nm1.place(x='10',y='45',width='400',height='45')
-Label(app,text='Senha:',background='#fff',foreground='#009').place(x='10',y='95',width='100',height='30')
-sn1 = Entry(app, text='senha')
-sn1.place(x='10',y='130',height='45',width='400')
-Button(app, text='Fazer Login',command=dados).place(x='10',y='185',width='200',height='45')
-fechar = Button(app,text="Sair",command=sair).place(x='10',y='240',width='200',height='45')
+app.title('Formulario em Python V1.0')
+app.configure(background='blue')
+app.geometry('500x400')
+
+Label(app, text='De:  ',anchor=W,background='blue',foreground='#fff').place(x='10',y='10',width='250',height='25')
+por=Entry(app)
+por.place(x='10',y='35',width='250',height='25')
+Label(app, text='Para: ',anchor=W,foreground='#fff',background='blue').place(x='10',y='65')
+para=Entry(app)
+para.place(x='10', y='85',width='250',height='25')
+Label(app, text="Assunto:  ",anchor=W,foreground="white",background="blue").place(x="10",y="120")
+resumo=Entry(app)
+resumo.place(x="10",y="140",width="250",height="25")
+Label(app, text="Texto:  ", background="blue",foreground="white",anchor=W).place(x="10",y="165")
+texto=Text(app)
+texto.place(x="10",y="200",width="345",height="150")
+Button(app, text='Imprimir Dados',background='black',foreground="white",command=CreateArchiver).place(x='10',y='360')
+Button(app, text='Fechar Formulario',background='black',foreground='white',command=close).place(x='120',y='360')
+
 app.mainloop()
