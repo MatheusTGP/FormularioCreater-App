@@ -13,6 +13,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
+    - name: Instalar Módulo...
+      run: pip install pyinstaller
     - name: Criar Executavel 2.0 do Formulario
-      run: |
-        python FormularioAppV2.0.py
+      run: pyinstaller --onefile FormularioAppV2.0.py
