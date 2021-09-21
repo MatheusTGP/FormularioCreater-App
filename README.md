@@ -1,3 +1,5 @@
+![Github Code](https://img.shields.io/static/v1?label=Compatibilidade&message=Android/Windows&color=green)
+![Github Code](https://img.shields.io/static/v1?label=Python&message=100%&color=darkblue)
 # Formulario-em-Python-com-Janela
 Nesse Formulário você podera salvar e Renomear um Formulário em Python com a Biblioteca TKinter!
 Voce podera criar um formulario no formato **.txt** (texto).
