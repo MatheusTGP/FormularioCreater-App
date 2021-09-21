@@ -32,4 +32,5 @@ Este codigo esta sendo produzido para ser livre, as "#" que contem dentro do cod
 com `` # Modificado Por: Seu Nome ``.
 
 # Lançamento
-O codigo em breve pode ser construido para ``.EXE``, no momento ele se localiza em ``.PY``.
+O Código está lançado na versão 2.0 Atualmente com um Executador
+**.EXE** para você não precisar instalar Bibliotecas.
