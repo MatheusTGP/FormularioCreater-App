@@ -31,7 +31,6 @@ caso seu arquivo .py do codigo estiver na pasta **Downloads** o arquivo .txt ser
 - [x] Windows (.EXE)
 - [x] Linux (.py)
 - [x] Android (.py)
-- [] MacOS (Desconhecido)
 
 # Liçensa
 Este codigo esta sendo produzido para ser livre, as "#" que contem dentro do codigo .py NAO os remova, caso for modificar o codigo...crie uma HashTag (#) 
