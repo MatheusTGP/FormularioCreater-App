@@ -27,6 +27,12 @@ Saos as bibliotecas que voce deve adquirir em seu Python
 Onde seu arquivo ``formulario.py`` estiver localizado.. o seu arquivo .txt do formulario sera lancado.. sendo assim,
 caso seu arquivo .py do codigo estiver na pasta **Downloads** o arquivo .txt sera feito na pasta **Downloads**, e assim vai.
 
+# Compatibilidade
+- [x] Windows (.EXE)
+- [x] Linux (.py)
+- [x] Android (.py)
+- [] MacOS (Desconhecido)
+
 # Liçensa
 Este codigo esta sendo produzido para ser livre, as "#" que contem dentro do codigo .py NAO os remova, caso for modificar o codigo...crie uma HashTag (#) 
 com `` # Modificado Por: Seu Nome ``.
