@@ -18,6 +18,5 @@ jobs:
     - name: Criar Executavel 2.0 do Formulario
       run: pyinstaller --onefile FormularioAppV2.0.py
     - uses: actions/upload-artifact@v2
-  with:
-    name: Gerar Artefatos Exe
-    path: D:\a\Formulario-em-Python-com-Janela\Formulario-em-Python-com-Janela\dist\FormularioAppV2.0.exe
+    - name: Gerar Artefatos Exe
+      path: D:\a\Formulario-em-Python-com-Janela\Formulario-em-Python-com-Janela\dist\FormularioAppV2.0.exe
