@@ -17,3 +17,8 @@ jobs:
       run: pip install pyinstaller
     - name: Criar Executavel 2.0 do Formulario
       run: pyinstaller --onefile FormularioAppV2.0.py
+    - name: Upload EXE
+      uses: actions/upload-artifact@v2
+      with:
+          name: Formulário_V2.0
+          path: dist/FormularioAppV2.0
