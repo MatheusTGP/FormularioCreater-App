@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -21,4 +21,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: Formulário_V2.0
-          path: dist/FormularioAppV2.0
+          path: dist/FormularioAppV2.0.exe
