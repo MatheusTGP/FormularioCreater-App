@@ -20,5 +20,5 @@ jobs:
     - name: Upload EXE
       uses: actions/upload-artifact@v2
       with:
-          name: Formulário_V2.0
-          path: D:\a\Formulario-em-Python-com-Janela\Formulario-em-Python-com-Janela\dist\FormularioAppV2.0.exe
+          name: Formulário_V2.0-Debug
+          path: D:/a/Formulario-em-Python-com-Janela/Formulario-em-Python-com-Janela/dist/FormularioAppV2.0.exe
