@@ -2,7 +2,7 @@ name: Formulario Code Application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "Python-Projects" ]
 
 jobs:
   build:
