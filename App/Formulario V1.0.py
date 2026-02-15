@@ -12,7 +12,6 @@ def salvar_formulario():
         arquivo.write(f"\nAssunto: {resumo.get()}")
         arquivo.write(f"\n\nTexto:\n{texto.get('1.0', END)}")
         arquivo.write("=" * 30 + "\n")
-
     print("Formulário salvo com sucesso!")
     
 def confirmar_saida():
@@ -27,7 +26,6 @@ def confirmar_saida():
         bg="red",
         fg="white"
     ).pack(pady=10)
-
     Button(janela, text="Sim", command=app.destroy).pack(side=LEFT, padx=20, pady=10)
     Button(janela, text="Não", command=janela.destroy).pack(side=RIGHT, padx=20, pady=10)
 
