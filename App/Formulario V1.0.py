@@ -1,51 +1,58 @@
 from tkinter import *
 import os
 
-esc=os.path.dirname("__file__")
-nomearq= esc+"Formulario.txt"
+base_dir = os.path.dirname(__file__)
+nomearq = os.path.join(base_dir, "Formulario.txt")
 
-def CreateArchiver():
-    arquivo=open(nomearq,"a")
-    arquivo.write("="*30)
-    arquivo.write("\n Por: %s "%por.get())
-    arquivo.write("\n Para:  %s "%para.get())
-    arquivo.write(" \n Assunto:  %s"%resumo.get())
-    arquivo.write("\n \n Texto: \n %s"%texto.get("1.0",END))
-    arquivo.write("="*30)
-    arquivo.close()
-    print("Formulario Feito com sucesso, verifique sua pasta do arquivo!" ) 
+def salvar_formulario():
+    with open(nomearq, "a", encoding="utf-8") as arquivo:
+        arquivo.write("=" * 30)
+        arquivo.write(f"\nPor: {por.get()}")
+        arquivo.write(f"\nPara: {para.get()}")
+        arquivo.write(f"\nAssunto: {resumo.get()}")
+        arquivo.write(f"\n\nTexto:\n{texto.get('1.0', END)}")
+        arquivo.write("=" * 30 + "\n")
 
-def close():
-    close2=Tk()
-    close2.title("Sair")
-    close2.geometry("290x120")
-    close2.configure(background="red")
+    print("Formulário salvo com sucesso!")
     
-    Label(close2, text="Voce Realmentemente deseja fechar o formulario?",background="red",foreground="white").place(x="10",y="10")
-    fechar=Button(close2, text="Sim",command=finalizar).place(x="40",y="45",width="70",height="30")
-    retornar=Button(close2, text="Nao",command=close2.destroy).place(x="160",y="45",width="70",height="30")
-    close2.mainloop()
-def  finalizar ():
-    exit()
+def confirmar_saida():
+    janela = Toplevel(app)
+    janela.title("Sair")
+    janela.geometry("300x120")
+    janela.configure(bg="red")
+
+    Label(
+        janela,
+        text="Deseja realmente fechar?",
+        bg="red",
+        fg="white"
+    ).pack(pady=10)
+
+    Button(janela, text="Sim", command=app.destroy).pack(side=LEFT, padx=20, pady=10)
+    Button(janela, text="Não", command=janela.destroy).pack(side=RIGHT, padx=20, pady=10)
 
 app = Tk()
-app.title('Formulario em Python V1.0')
-app.configure(background='blue')
-app.geometry('500x400')
+app.title("Formulário em Python")
+app.configure(bg="blue")
+app.geometry("500x400")
 
-Label(app, text='De:  ',anchor=W,background='blue',foreground='#fff').place(x='10',y='10',width='250',height='25')
-por=Entry(app)
-por.place(x='10',y='35',width='250',height='25')
-Label(app, text='Para: ',anchor=W,foreground='#fff',background='blue').place(x='10',y='65')
-para=Entry(app)
-para.place(x='10', y='85',width='250',height='25')
-Label(app, text="Assunto:  ",anchor=W,foreground="white",background="blue").place(x="10",y="120")
-resumo=Entry(app)
-resumo.place(x="10",y="140",width="250",height="25")
-Label(app, text="Texto:  ", background="blue",foreground="white",anchor=W).place(x="10",y="165")
-texto=Text(app)
-texto.place(x="10",y="200",width="345",height="150")
-Button(app, text='Imprimir Dados',background='black',foreground="white",command=CreateArchiver).place(x='10',y='360')
-Button(app, text='Fechar Formulario',background='black',foreground='white',command=close).place(x='120',y='360')
+Label(app, text="De:", bg="blue", fg="white").place(x=10, y=10)
+por = Entry(app)
+por.place(x=10, y=35, width=250)
+
+Label(app, text="Para:", bg="blue", fg="white").place(x=10, y=65)
+para = Entry(app)
+para.place(x=10, y=90, width=250)
+
+Label(app, text="Assunto:", bg="blue", fg="white").place(x=10, y=120)
+resumo = Entry(app)
+resumo.place(x=10, y=145, width=250)
+
+Label(app, text="Texto:", bg="blue", fg="white").place(x=10, y=175)
+texto = Text(app)
+texto.place(x=10, y=200, width=350, height=120)
+
+Button(app, text="Salvar", command=salvar_formulario).place(x=10, y=340)
+Button(app, text="Fechar", command=confirmar_saida).place(x=100, y=340)
 
 app.mainloop()
