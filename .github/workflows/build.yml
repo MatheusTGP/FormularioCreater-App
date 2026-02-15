@@ -23,7 +23,7 @@ jobs:
           pip install pyinstaller
 
       - name: Gerar executável com PyInstaller
-        run: pyinstaller --onefile FormularioAppV2.0.py
+        run: pyinstaller --onefile App/FormularioAppV2.0.py
 
       - name: Upload do executável
         uses: actions/upload-artifact@v4
